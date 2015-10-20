@@ -56,8 +56,21 @@ filetype plugin indent on    " required
 colorscheme elflord
 set nu
 
+" high light the word while pressing shift + asterisk
+set hlsearch
 
-set hlsearch " high light the word while pressing shift + asterisk
+"" ----------------------------------------
+
+filetype plugin indent on
+
+" show existing tab with 4-space width
+set tabstop=4
+
+" when indenting with '>', use 4-space width
+set shiftwidth=4
+
+" on pressing tab, insert 4 spaces
+set expandtab
 
 "" ----------------------------------------
 
