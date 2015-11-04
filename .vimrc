@@ -30,10 +30,26 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 "Plugin 'user/L9', {'name': 'newL9'}
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'taglist.vim'
+" ---
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
+" Optional:
+Plugin 'honza/vim-snippets'
+" ---
 
 Plugin 'kien/ctrlp.vim'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/unite.vim'
+
+Plugin 'taglist.vim'
+
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-bundler.git'
+
+Plugin 'vim-ruby/vim-ruby'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,6 +82,7 @@ filetype plugin indent on
 " show existing tab with 4-space width
 set tabstop=4
 
+" how many spaces to indent
 " when indenting with '>', use 4-space width
 set shiftwidth=4
 
@@ -111,6 +128,15 @@ set expandtab
 set tags+=~/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/tags
 
 "
+" below_let_command
+"
+let mapleader=","
+
+"
+" above_let_command
+"
+
+"
 " nerdtree
 "
 let NERDTreeShowHidden=1
@@ -149,9 +175,10 @@ source ~/cc/bin2u/vimrc/cscope_maps.vim
 
 ""
 "" 'c' - the directory of the current file.
-"" 'r' - the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs
-"" 'a' - like c, but only if the current working directory outside of CtrlP is not 
-""       a direct ancestor of the directory of the current file.
+"" 'r' - the nearest ancestor that contains one of these directories or files:
+""       .git .hg .svn .bzr _darcs
+"" 'a' - like c, but only if the current working directory outside of CtrlP
+""       is not a direct ancestor of the directory of the current file.
 "" 0 or '' (empty string) - disable this feature.
 ""
 "let g:ctrlp_working_path_mode = 'c'
@@ -165,3 +192,10 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
   \ }
+
+"
+" unite
+"
+nnoremap <leader>b :Unite buffer<cr>
+nnoremap <leader>f :Unite file<cr>
+nnoremap <leader>fr :Unite file_rec<cr>
